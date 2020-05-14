@@ -45,6 +45,91 @@ Docker Hub官网：https://hub.docker.com/
 
 ## 2、Docker安装
 
+### CentOS7 安装
+
+**官方文档**：https://docs.docker.com/engine/install/centos/
+
+1、安装需要的软件包
+
+```shell
+yum install -y yum-utils device-mapper-persistent-data lvm2
+```
+
+2、设置stable镜像仓库
+
+```shell
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+```
+
+3、更新yum软件包索引
+
+```shell
+yum makecache fast
+```
+
+4、安装docker-ce
+
+```shell
+ yum -y install docker-ce
+```
+
+5、启动docker
+
+```shell
+systemctl start docker
+```
+
+6、查看docker版本
+
+```shell
+docker version
+```
+
+7、拉取并运行hello-world
+
+```shell
+docker pull hello-world
+
+docker pull hello-world
+```
+
+8、配置阿里云镜像加速 https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors
+
+```shell
+# 创建目录
+mkdir -p /etc/docker
+
+# 修改配置文件
+vim  /etc/docker/daemon.json
+{
+  "registry-mirrors": ["https://｛自已的编码｝.mirror.aliyuncs.com"]
+}
+
+# 重新加载
+systemctl daemon-reload
+
+# 重启docker
+systemctl restart docker
+
+```
+
+
+
+### Windows安装
+
+**安装要求：**
+
+- Windows 10 64位：专业版，企业版或教育版（内部版本15063或更高版本）。
+- 必须启用Hyper-V和Containers Windows功能。
+- 要在Windows 10上成功运行Client Hyper-V，需要满足以下硬件先决条件：
+  - 具有二级地址转换（SLAT）的 64位处理器
+  - 4GB系统内存
+  - 必须在BIOS设置中启用BIOS级硬件虚拟化支持。
+
+**文件下载**：https://hub.docker.com/editions/community/docker-ce-desktop-windows/
+
+
+
 ## 3、Docker常用命令
 
 ## 4、Docker镜像
