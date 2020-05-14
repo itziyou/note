@@ -132,6 +132,22 @@ systemctl restart docker
 
 ## 3、Docker常用命令
 
+**帮助命令**
+
+```shell
+docker version
+
+docker info
+
+docker --help
+```
+
+**镜像命令**
+
+docker images    列出本主机上的镜像
+
+![](https://github.com/itziyou/note/blob/master/img/docker/docker_001.png)
+
 ## 4、Docker镜像
 
 ## 5、容器间通信
